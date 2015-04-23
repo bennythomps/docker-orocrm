@@ -1,4 +1,4 @@
-FROM oro/crm-debian-base
+FROM oro/crm-debian-root
 MAINTAINER Sergey Cherepanov <scherepanov@magecore.com>
 
 COPY bin/* /opt/bin/
