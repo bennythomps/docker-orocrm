@@ -16,4 +16,4 @@ parameters:
     session_handler: session.handler.native_file
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
-    installed: null
+    installed: true
