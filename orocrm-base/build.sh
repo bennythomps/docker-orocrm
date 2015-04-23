@@ -1,2 +1,5 @@
 #!/bin/bash
-docker build -t oro/crm-debian-base -f $(dirname $(readlink -f $0))/Dockerfile
+pwd=$(pwd)
+cd $(dirname $(readlink -f $0))
+docker build -t oro/crm-debian-base .
+cd ${pwd}
