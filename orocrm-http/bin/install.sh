@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "Building oro/crm-debian-base image..."
+echo "Building oro/crm-debian-http image..."
 export DEBIAN_FRONTEND=noninteractive
-MEMORY_LIMIT="256"
+MEMORY_LIMIT="512"
 UPLOAD_LIMIT="128"
 
 # install base packages
@@ -24,6 +24,10 @@ sed -i -e "s/short_open_tag\s=\s*.*/short_open_tag = Off/g" /etc/php5/fpm/php.in
 sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = ${UPLOAD_LIMIT}M/g" /etc/php5/fpm/php.ini
 sed -i -e "s/memory_limit\s=\s.*/memory_limit = ${MEMORY_LIMIT}M/g" /etc/php5/fpm/php.ini
 sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = ${UPLOAD_LIMIT}M/g" /etc/php5/fpm/php.ini
+
+sed -i -e "s/;date.timezone\s=/date.timezone = UTC/g" /etc/php5/cli/php.ini
+sed -i -e "s/short_open_tag\s=\s*.*/short_open_tag = Off/g" /etc/php5/cli/php.ini
+sed -i -e "s/memory_limit\s=\s.*/memory_limit = ${MEMORY_LIMIT}M/g" /etc/php5/cli/php.ini
 
 # php-fpm config
 sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
