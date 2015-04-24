@@ -13,7 +13,7 @@ sed -i -e"s/keepalive_timeout 2/keepalive_timeout 2;\n\tclient_max_body_size ${U
 echo "daemon off;" >> /etc/nginx/nginx.conf
 
 unlink /etc/nginx/sites-enabled/default
-mv /tmp/nginx/crm.conf /etc/nginx/sites-available/orocrm
+mv /tmp/nginx-crm.conf /etc/nginx/sites-available/orocrm
 ln -s /etc/nginx/sites-available/orocrm /etc/nginx/sites-enabled/orocrm
 
 # configure php
