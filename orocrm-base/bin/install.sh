@@ -2,6 +2,7 @@
 echo "Building oro/crm-debian-base image..."
 APP_ROOT="/var/www"
 USER="www-data"
+GROUP="www-data"
 
 function as_user {
     sudo -u ${USER} $@
@@ -13,5 +14,7 @@ as_user tar -zxf /tmp/crm-application-1.6.1.tar.gz -C /tmp
 mv /tmp/crm-application-1.6.1 ${APP_ROOT}
 rm /tmp/crm-application-1.6.1.tar.gz
 as_user composer install -d ${APP_ROOT}
-as_user mv /tmp/parameters.yml ${APP_ROOT}/app/config/parameters.yml
-as_user mv /tmp/OroRequirements.php ${APP_ROOT}/app/OroRequirements.php
+mv /tmp/parameters.yml ${APP_ROOT}/app/config/parameters.yml
+mv /tmp/OroRequirements.php ${APP_ROOT}/app/OroRequirements.php
+chown ${USER}:${GROUP} ${APP_ROOT}/app/config/parameters.yml
+chown ${USER}:${GROUP} ${APP_ROOT}/app/OroRequirements.php
