@@ -1,0 +1,25 @@
+http:
+  image: oro/crm-debian-http
+  links:
+    - db
+  ports:
+    - 80
+  environment:
+    OROCRM_DB_HOST: db
+    OROCRM_DB_PORT: 3306
+    OROCRM_DB_USER: orocrm
+    OROCRM_DB_PASSWORD: orocrm
+    OROCRM_DB_NAME: orocrm
+    OROCRM_DB_HOST: db
+    OROCRM_HOSTNAME: localhost
+    OROCRM_WEBSOCKET_HOST: localhost
+    OROCRM_WEBSOCKET_PORT: 8080
+db:
+  image: mysql
+  expose:
+    - 3306
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_USER: orocrm
+    MYSQL_PASSWORD: orocrm
+    MYSQL_DATABASE: orocrm

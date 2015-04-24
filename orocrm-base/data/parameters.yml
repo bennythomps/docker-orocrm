@@ -11,9 +11,9 @@ parameters:
     mailer_encryption: null
     mailer_user: null
     mailer_password: null
-    websocket_host: 0.0.0.0
-    websocket_port: 8080
+    websocket_host: %WEBSOCKET_HOST%
+    websocket_port: %WEBSOCKET_PORT%
     session_handler: session.handler.native_file
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
-    installed: true
+    installed: null

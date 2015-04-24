@@ -8,6 +8,9 @@ sed -i -e "s/%DB_USER%/${OROCRM_DB_USER}/g" ${APP_ROOT}/app/config/parameters.ym
 sed -i -e "s/%DB_PASSWORD%/${OROCRM_DB_PASSWORD}/g" ${APP_ROOT}/app/config/parameters.yml
 sed -i -e "s/%DB_NAME%/${OROCRM_DB_NAME}/g" ${APP_ROOT}/app/config/parameters.yml
 
+sed -i -e "s/%DB_NAME%/${OROCRM_WEBSOCKET_HOST}/g" ${APP_ROOT}/app/config/parameters.yml
+sed -i -e "s/%DB_NAME%/${OROCRM_WEBSOCKET_PORT}/g" ${APP_ROOT}/app/config/parameters.yml
+
 # start all the services
 /usr/local/bin/supervisord -n
 
