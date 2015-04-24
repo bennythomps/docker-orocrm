@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Building oro/crm-debian-base image..."
+export DEBIAN_FRONTEND=noninteractive
 APP_ROOT="/var/www"
 USER="www-data"
 GROUP="www-data"

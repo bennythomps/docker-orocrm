@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Building oro/crm-debian-root image..."
+export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get -y upgrade
 

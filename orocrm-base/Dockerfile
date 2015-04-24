@@ -1,8 +1,6 @@
 FROM oro/crm-debian-root
 MAINTAINER Sergey Cherepanov <scherepanov@magecore.com>
 
-ENV DEBIAN_FRONTEND noninteractive
-
 COPY bin/* /opt/bin/
 COPY data/* /tmp/
 

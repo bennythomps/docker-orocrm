@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Building oro/crm-debian-base image..."
+export DEBIAN_FRONTEND=noninteractive
 MEMORY_LIMIT="256"
 UPLOAD_LIMIT="128"
 
