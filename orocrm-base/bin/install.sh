@@ -6,7 +6,7 @@ USER="www-data"
 function as_user {
     sudo -u ${USER} $@
 }
-chown -R ${USER} ${APP_ROOT}
+as_user mkdir -p /var/www
 # download OroCRM
 as_user wget -O /tmp/crm-application-1.6.1.tar.gz -N -P /tmp https://github.com/orocrm/crm-application/archive/1.6.1.tar.gz
 as_user tar -zxf /tmp/crm-application-1.6.1.tar.gz -C /tmp 
